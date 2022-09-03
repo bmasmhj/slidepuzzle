@@ -1,0 +1,92 @@
+body{
+    text-align: center;
+}
+
+.arrow-keys{
+  width: 20px;
+}
+.imginvert{
+  filter: invert(1);
+
+}
+.valls{
+  font-size: 29px;
+}
+.active{
+  background-color: #000000!important;
+  
+}
+
+.active .arrow-keys{
+  filter: invert(1);
+}
+.gamebox{
+    /* width */
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+  width: 100%!important;
+}
+
+.game>.card-body{
+  width: 100%;
+
+}
+
+.tiles {
+float: left;
+width: 25%;
+text-align: center;
+border-right: 3px #000000 solid;
+border-bottom: 3px #000000 solid;
+border-left: 3px #CCCCCC solid;
+border-top: 3px #CCCCCC solid;
+font-family: Arial;
+font-weight: bold;
+padding-top: 12px;
+}
+
+.emptySpace {
+float: left;
+width: 25%;
+}
+
+
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #17c1e8;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #17c1e8;
+    cursor: pointer;
+  }

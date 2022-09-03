@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIDER Game</title>
+</head>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+
+<body class="bg-gray-100">
+    <h4 id="timer"></h4>
+    
+    <br>
+    
+
+</p>
+<div class="container bg-gray-100 ">
+    <div class="row">
+        <div class="d-sm-block d-md-none">
+            <h2 class="mb-5">SIMPLE SLIDER GAME ( <span id="sizenum">4x4</span> )</h2>
+            <br>
+            <label for="">Slide to Change levels</label>
+            <br>
+            <button class="btn btn-info p-1" id="dec" onclick="generate(1)"><img class='arrow-keys imginvert' src="assets/img/min.svg" alt="up"> </button>
+            <button class="btn bg-none shadow-none" disabled> <span class="valls" id="val">4</span></button>
+
+            <button class="btn btn-info p-1" id="inc"  onclick="generate(2)"><img class='arrow-keys imginvert' src="assets/img/pl.svg" alt="up"> </button>
+
+            <br>
+            <br>
+            <input type="hidden" id="movement" value="0">
+       </div>
+        <div class="col-md-9 order-md-2">
+            
+            <div class="card game">
+                <div class="card-body">
+                    <div id="slidePuzzle" style=" background: #ffffff; padding: 10px;"></div>
+                </div>
+            </div>
+        </div>
+        <a href="#keysdown" id="keysdown"></a>
+        
+        <div class="col-md-3  d-flex align-items-center justify-content-center order-md-1" id="keysdown">
+            <div>
+               <div class="d-none d-md-block">
+                    <h2 class="mb-5">SIMPLE SLIDER GAME ( <span id="sizenums">4x4</span> )</h2>
+                    <br>
+                    <br>
+                    <button class="btn btn-info p-1" id="dec" onclick="generate(1)"><img class='arrow-keys imginvert' src="assets/img/min.svg" alt="up"> </button>
+                    <button class="btn bg-none shadow-none" disabled> <span class="valls"  id="vals">4</span></button>
+
+                    <button class="btn btn-info p-1" id="inc"  onclick="generate(2)"><img class='arrow-keys imginvert' src="assets/img/pl.svg" alt="up"> </button>
+
+                    <br>
+               </div>
+                <div class="card mt-3">
+                    <div class="card-body ">
+                        <button class="btn btn-info" id="up" onclick="btnevent(1)" > <img class='arrow-keys' src="assets/img/u.svg" alt="up"> </button>
+                        <br>
+                        <button class="btn btn-info" id="lft" onclick="btnevent(4)" > <img class='arrow-keys' src="assets/img/b.svg" alt="back"> </button>
+                        <button class="btn btn-info" id="dwn" onclick="btnevent(3)" > <img class='arrow-keys' src="assets/img/d.svg" alt="down"> </button>
+                        <button class="btn btn-info" id="rght" onclick="btnevent(2)" > <img class='arrow-keys' src="assets/img/f.svg" alt="front"> </button>
+                    </div>
+                    <label for="">Use arrow keys or press below keys</label>
+
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+</div>
+
+<footer class="bottom-0">
+    <h6 class="text-center"><span class="text-secondary">Copyright © <span id="datenow"></span> </span> |<a href="bimash.com.np"> Shangxin </a></h6>
+</footer>
+
+
+
+</body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+<script src="assets/js/script.js"></script>
+<script>
+
+    document.getElementById('datenow').innerHTML = new Date().getFullYear();
+    new SlidePuzzle(4, true);
+    window.onkeydown = keyDownEvent;
+
+            // if(window.onkeydown = keyDownEvent){
+            //     timer();
+            // }
+
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                    Swal.fire(
+                    'Mobile Detected',
+                    'Use Desktop Computer for better experince',
+                    'info'
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire(
+                            'Tutorial',
+                            'Game doesnot supports slide mode use arrow keys to move around',
+                            'info'
+                            ).then((result) => {
+                               document.getElementById('keysdown').click();
+                            });
+                        }
+                    });
+            }
+</script>
+</html>
